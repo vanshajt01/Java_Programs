@@ -6,6 +6,7 @@ public class reverseLL {
     class Node{
         int val;
         Node next;
+        public Node(){}
         public Node(int val){
             this.val=val;
         }}
@@ -33,7 +34,32 @@ public class reverseLL {
         }
     }
     public void reverse(){
+        //Write Your Code Here
+        Node curr=this.head,next=new Node();//pre=next;
+       // Node header=next;
 
+        while(curr!=null){
+            Node pre=new Node(curr.val);
+            pre.val=curr.val;
+            pre.next=next;
+            next=pre;
+            curr=curr.next;
+        }
+        while(next.next!=null){
+            System.out.print(next.val+"->");
+            next=next.next;
+        }
+//        while(header!=null){
+//            System.out.print(header.val+" ");
+//            header=header.next;
+//        }
+        //return header.next;
+    }
+    public void display(Node head){
+        while(head!=null){
+            System.out.println(head.val+" ");
+            head=head.next;
+        }
     }
 
     public static void main (String args[]) {
@@ -43,6 +69,7 @@ public class reverseLL {
         for(int i=0;i<size;i++){
             x.addLast(inp.nextInt());
         }
-        x.display();
+        x.reverse();
+       // x.display(x.reverse();
     }
 }
