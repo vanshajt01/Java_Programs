@@ -40,7 +40,7 @@ public class reverseLL {
 
         while(curr!=null){
             Node pre=new Node(curr.val);
-            pre.val=curr.val;
+          //  pre.val=curr.val;
             pre.next=next;
             next=pre;
             curr=curr.next;
