@@ -12,9 +12,10 @@ class JumptoTargetwith123Steps {
         else if(curr>target){
             return 0;
         }
-     int f1=   stepOn(target,curr+1,Steps+1);
-     int f2=   stepOn(target,curr+2,Steps+2);
-     int f3=   stepOn(target,curr+3,Steps+3);
-        return f1+f2+f3;
+        int f1=0;
+        for(int i=1;i<=3;i++){
+                f1+=stepOn(target,curr+i,Steps+i);}
+
+        return f1;
     }
 }

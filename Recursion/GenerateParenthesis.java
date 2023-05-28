@@ -2,7 +2,7 @@ package Recursion;
 
 public class GenerateParenthesis {
     public static void main(String[] args) {
-generator(0,0,0,"");
+            generator(0,0,1,"");
     }
     public static void generator(int opening,int closing,int n,String ans){
         if(opening==n && closing==n){
@@ -10,11 +10,11 @@ generator(0,0,0,"");
             return;
         }
         if(opening<n){
-            generator(opening,closing,n,ans+'(');
+            generator(opening+1,closing,n,ans+'(');
         }
 
-        if(closing<n){
-            generator(opening,closing,n,ans+')');
+        if(closing<opening){
+            generator(opening,closing+1,n,ans+')');
         }
     }
 }
