@@ -7,13 +7,14 @@ public class KeypadProblem {
     }
     public static void keypad(String a,String ans){
         if(a.isEmpty()){
-
+            System.out.println(ans);
+                return;
         }
-        for(int i=0;i<a.length();i++){
-            for(int j=0;j<Arr[i].length();j++){
-              //  keypad(a.substring(),ans+Arr[i]);
-            }
+        char ch=a.charAt(0);
+        String preString =Arr[ch-48];
+        for(int i=0;i<preString.length();i++)
+            keypad(a.substring(1),ans+preString.charAt(i));
         }
     }
 
-}
+
