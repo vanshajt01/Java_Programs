@@ -8,9 +8,9 @@ public class customLL{
             this.data=data;
         }
     }
-    private Node head;
-    private Node tail;
-    private int size;
+    public Node head;
+    public Node tail;
+    public int size;
 
     public void size(){
         System.out.println(this.size);
@@ -31,9 +31,14 @@ public class customLL{
     }
     public void addlast(int item){
         Node nn=new Node(item);
+        if(size==0){
+            this.head=nn;
+            this.tail=nn;
+        }
+        else{
         this.tail.next=nn;
         this.tail=nn;
-        size++;
+        size++;}
     }
     public void addAtAny(int index,int item) throws Exception{
         if(index==0 ) {
@@ -124,10 +129,11 @@ public class customLL{
     }
     public void display(){
         Node temp=this.head;
-        for(int i=0;i<this.size ;i++){
+        while(temp!=null){
             System.out.print(temp.data+"->");
             temp=temp.next;
         }
+        System.out.println("");
     }
 
 
